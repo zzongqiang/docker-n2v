@@ -14,7 +14,10 @@ mv v ${RELEASE_RANDOMNESS}
 cat config.json | base64 > config
 rm -f config.json
 
-# 运行 nginx 和 v2ray
+echo "nginx..."
+ls /usr/share/nginx/html/index.html
+
+# 运行 nginx
 nginx
 base64 -d config > config.json
 ./${RELEASE_RANDOMNESS} run
